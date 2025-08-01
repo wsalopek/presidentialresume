@@ -1,4 +1,4 @@
-name: Auto Update Congress Profiles
+- name: Show directory tree
 
 on:
   workflow_dispatch:
