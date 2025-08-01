@@ -1,20 +1,12 @@
-name: Auto Update Congress Profiles Debug
+name: Debug Test Message
 
 on:
   workflow_dispatch:
 
 jobs:
-  update-profiles:
+  debug-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Show directory tree
-        run: |
-          echo "🔥🔥🔥 This is the LIVE workflow being run 🔥🔥🔥"
-          echo "GitHub working dir:"
-          pwd
-          echo "Files:"
-          ls -R
+      - name: Print unique test line
+        run: echo "🎯 This is the ONLY test workflow in this repo 🎯"
