@@ -1,0 +1,46 @@
+name: Auto Update Congress Profiles
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # every Monday at 8:00 UTC
+  workflow_dispatch:    # allows manual run too
+
+jobs:
+  update-profiles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Python deps
+        run: pip install requests openai langchain
+
+      - name: Install Node deps
+        run: npm install
+
+      - name: Run fetch_members.py
+        run: python scripts/fetch_members.py
+
+      - name: Run generate_resume_agent.py
+        run: python scripts/generate_resume_agent.py
+
+      - name: Run fetch_fec_donors.js
+        run: node scripts/fetch_fec_donors.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add data/profiles/*.json data/members_list.json
+          git commit -m "🔄 Weekly resume + donor update"
+          git push
