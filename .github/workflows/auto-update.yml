@@ -13,6 +13,7 @@ jobs:
 
       - name: Show directory tree
         run: |
+          echo "🔥🔥🔥 This is the LIVE workflow being run 🔥🔥🔥"
           echo "GitHub working dir:"
           pwd
           echo "Files:"
