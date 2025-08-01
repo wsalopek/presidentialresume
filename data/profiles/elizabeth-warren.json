@@ -1,0 +1,31 @@
+{
+  "name": "Elizabeth Warren",
+  "office": "U.S. Senator – Massachusetts",
+  "contact": {
+    "email": "senator@warren.senate.gov",
+    "website": "https://www.warren.senate.gov"
+  },
+  "education": [
+    "University of Houston – B.S.",
+    "Rutgers Law School – J.D."
+  ],
+  "experience": [
+    "U.S. Senator since 2013",
+    "Harvard Law Professor"
+  ],
+  "focus": [
+    "Banking regulation",
+    "Student debt",
+    "Consumer protection"
+  ],
+  "committees": [
+    "Banking, Housing, and Urban Affairs",
+    "Finance Committee"
+  ],
+  "statement": "The system is rigged, and we need big, structural change.",
+  "donors": [
+    { "name": "ActBlue", "amount": 250000 },
+    { "name": "EMILY's List", "amount": 120000 },
+    { "name": "Google LLC", "amount": 95000 }
+  ]
+}
